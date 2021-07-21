@@ -18,10 +18,26 @@ export const addItem = (item) => {
         type: 'ADD',
         item: item,
     }
+};
+
+export const reducer = (state = initalState, action) => {
+    switch(action.type) {
+        case 'INITIALCARDS':
+            return {
+                cards: action.cards,
+            }
+        case 'ADD':
+            return {
+                ...state,
+                cards: [...state.cards, action.item],
+            }
+        default:
+            return state;
+    }
 }
 
 const store = ( initialStore = startState ) => {
-    return createStore(reducer, initialState);
+    return createStore(reducer, initialStore);
 };
 
 export const initStore = createWrapper(store);
