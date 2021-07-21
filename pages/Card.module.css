@@ -28,6 +28,7 @@
 .container {
   padding: 2px 16px;
   background-color: white;
+  color: black;
   border-radius: 0 0 10px 10px;
 }
 
